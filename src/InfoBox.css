@@ -1,0 +1,74 @@
+.infoBox {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 35vh;
+    background-color: #7b6df3 !important;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40vw;
+    text-align: center;
+}
+
+.upperInfo > h3 {
+    font-size: 4.3vh;
+    font-weight: 500;
+}
+
+.weatherIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.weatherInfoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.upperInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.minTemp {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.maxTemp {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
+    .infoBox { 
+        width: 80vw;
+    }
+
+    .weatherIcon {
+        gap: 10px;
+    }
+
+    .weatherInfoBox {
+        margin-top: 10px;
+    }
+
+    .infoBox > h3 {
+        font-size: 3.5vh;    
+    }
+
+    .infoBox > p {
+        font-size: 2.5vh;
+    }   
+    
+}

@@ -1,0 +1,64 @@
+.searchBox {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7b6df3;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.app-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-logo h2 {
+    margin-left: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .searchBox {
+        width: 80vw;
+    }
+
+    .app-logo h2 {
+        font-size: 20px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    .search button {
+        margin-top: 10px;
+    }
+
+    .search input {
+        width: 100%;
+    }   
+
+    .search button {
+        width: 100%;
+    }
+    
+}
