@@ -7,7 +7,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { faCloudRain } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { faSnowflake } from '@fortawesome/free-solid-svg-icons';
 
 export default function InfoBox( { weatherInfo } ) {
     let [loading , setLoading] = useState(false);
@@ -57,16 +58,16 @@ export default function InfoBox( { weatherInfo } ) {
                     </div>
                 </div>
                 <div className='weatherIcon'>
-                {weatherInfo.humidity > 90 && (
-                    <FontAwesomeIcon size='md' icon={faCloudRain} />
+                {weatherInfo.temp > 15 && (
+                    <FontAwesomeIcon size='2x' icon={faCloud} />
                 )}
-                {weatherInfo.humidity < 90 && (
-                    <FontAwesomeIcon size='md' icon={faCloud} />
+                {weatherInfo.temp > 30 && weatherInfo.humidity < 50 && (
+                    <FontAwesomeIcon size='2x' icon={faCloudSun} />
                 )}
-                {weatherInfo.humidity === 0 && (
-                    <FontAwesomeIcon size='md' icon={faCloud} />
+                {weatherInfo.temp < 15 && (
+                    <FontAwesomeIcon size='2x' icon={faSnowflake} />
                 )}
-                <h3>{Math.floor(weatherInfo.temp)}&deg;C</h3>
+                <h1>{Math.floor(weatherInfo.temp)}&deg;C</h1>
                 </div>
                 <div className="weatherInfoBox">
                     <p>{capitalizeFirstLetter(weatherInfo.description)}</p>
