@@ -48,7 +48,7 @@ export default function InfoBox( { weatherInfo } ) {
                                 <p>{Math.floor(weatherInfo.min_temp)}&deg;C</p>
                             </div>
                     </div>
-                    <h3>{newCity}</h3>
+                    <p className='cityName'>{newCity}</p>
                     <div className="rightPanel">
                         <FontAwesomeIcon size='lg' icon={faArrowUp} />
                         <div className="maxTemp">
@@ -73,8 +73,8 @@ export default function InfoBox( { weatherInfo } ) {
                     <p>{capitalizeFirstLetter(weatherInfo.description)}</p>
                     <p>Humidity: {weatherInfo.humidity}%</p>
                     <p>Feels Like: {weatherInfo.feelsLike}&deg;C</p>
-                    <p>Sunrise: {weatherInfo.sunrise}</p>
-                    <p>Sunset: {weatherInfo.sunset}</p>
+                    <p>Sunrise At: {weatherInfo.sunrise}</p>
+                    <p>Sunset At: {weatherInfo.sunset}</p>
                 </div>
                 </>
         )}

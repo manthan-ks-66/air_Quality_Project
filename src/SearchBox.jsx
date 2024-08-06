@@ -20,14 +20,14 @@ export default function SearchBox( {updateWeatherInfo} ) {
     //Sunrise time (converted to local time)
     function sunRiseTime(time) {
         const date = new Date(time * 1000);
-        const formattedDate = format(date, 'PPPpp');
+        const formattedDate = format(date, 'hh:mm a');
         return formattedDate;
     }
 
     //Sunset time (converted to local time)
     function sunSetTime(time) {
         const date = new Date(time * 1000);
-        const formattedDate = format(date, 'PPPpp');
+        const formattedDate = format(date, 'hh:mm a');
         return formattedDate;
     }
 
