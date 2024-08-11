@@ -61,11 +61,11 @@ export default function InfoBox( { weatherInfo } ) {
                 {weatherInfo.temp > 15 && (
                     <FontAwesomeIcon size='2x' icon={faCloud} />
                 )}
-                {weatherInfo.temp > 30 && weatherInfo.humidity < 50 && (
-                    <FontAwesomeIcon size='2x' icon={faCloudSun} />
-                )}
                 {weatherInfo.temp < 15 && (
                     <FontAwesomeIcon size='2x' icon={faSnowflake} />
+                )}
+                {weatherInfo.temp > 30 && weatherInfo.humidity < 50 && (
+                    <FontAwesomeIcon size='2x' icon={faCloudSun} />
                 )}
                 <h1>{Math.floor(weatherInfo.temp)}&deg;C</h1>
                 </div>

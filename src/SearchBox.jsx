@@ -110,5 +110,5 @@ export default function SearchBox( {updateWeatherInfo} ) {
 
 SearchBox.propTypes = {
     updateWeatherInfo: PropTypes.func.isRequired,
-  };
+};
   
