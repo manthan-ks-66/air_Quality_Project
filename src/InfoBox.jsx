@@ -1,20 +1,26 @@
 import './InfoBox.css'
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
-import { faSnowflake } from '@fortawesome/free-solid-svg-icons';
 
 export default function InfoBox( { weatherInfo } ) {
     let [loading , setLoading] = useState(false);
     function capitalizeFirstLetter(string) {
         if (string.length === 0) return string;
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    const weatherIcon = {
+        'rain': "/rain.gif",
+        'clouds': "/cloudy.gif", 
+        'mist': '/foggy.gif',
+        'snow': '/winter.gif',
+        'storm': '/storm.gif',
+        'hot': '/sun.gif',
     }
 
     useEffect(() => {
@@ -32,7 +38,6 @@ export default function InfoBox( { weatherInfo } ) {
     let newCity = capitalizeFirstLetter(weatherInfo.city);
       
     return (
-       
          <div className='infoBox'>
          {loading ? (
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -57,25 +62,34 @@ export default function InfoBox( { weatherInfo } ) {
                             </div>
                     </div>
                 </div>
-                <div className='weatherIcon'>
-                {weatherInfo.temp > 15 && (
-                    <FontAwesomeIcon size='2x' icon={faCloud} />
-                )}
-                {weatherInfo.temp < 15 && (
-                    <FontAwesomeIcon size='2x' icon={faSnowflake} />
-                )}
-                {weatherInfo.temp > 30 && weatherInfo.humidity < 50 && (
-                    <FontAwesomeIcon size='2x' icon={faCloudSun} />
-                )}
+                    <div className='weatherIcon'>
+                    {weatherInfo.main === 'Clear' ? (
+                        <img src={weatherIcon['clouds']} alt="Clouds" />
+                    ) : weatherInfo.main === 'Rain' ? (
+                        <img src={weatherIcon['rain']} alt="Rain" />
+                    ) : weatherInfo.main === 'Mist' ? (
+                        <img src={weatherIcon['mist']} alt="Mist" />
+                    ) : weatherInfo.main === 'Snow' ? (
+                        <img src={weatherIcon['snow']} alt="Snow" />
+                    ) : weatherInfo.main === 'Thunderstorm' ? (
+                        <img src={weatherIcon['storm']} alt="Storm" />
+                    ) : weatherInfo.main === 'Clear' ? (
+                        <img src={weatherIcon['clouds']} alt="cloudy" />
+                    ) : (
+                        <img src={weatherIcon['clouds']} alt="clouds" />
+                    )}
                 <h1>{Math.floor(weatherInfo.temp)}&deg;C</h1>
                 </div>
-                <div className="weatherInfoBox">
+                <div className="description">
                     <p>{capitalizeFirstLetter(weatherInfo.description)}</p>
+                 </div>
+                <div className="weatherInfoBox">
                     <p>Humidity: {weatherInfo.humidity}%</p>
-                    <p>Feels Like: {weatherInfo.feelsLike}&deg;C</p>
+                    <p>Feels Like: {Math.floor(weatherInfo.feelsLike)}&deg;C</p>
                     <p>Sunrise At: {weatherInfo.sunrise}</p>
                     <p>Sunset At: {weatherInfo.sunset}</p>
                 </div>
+
                 </>
         )}
          </div>
@@ -92,6 +106,7 @@ InfoBox.propTypes = {
         sunset: PropTypes.string.isRequired,
         feelsLike: PropTypes.number.isRequired,
         min_temp: PropTypes.number.isRequired,
-        max_temp: PropTypes.number.isRequired
+        max_temp: PropTypes.number.isRequired,
+        main: PropTypes.string.isRequired
     }).isRequired,
 };

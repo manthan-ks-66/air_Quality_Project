@@ -1,16 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Barlow-Medium;
 }
 
 body {
-    background-image: url("/backgroundImg.jpg");
+    background-image: url("/bg_Image.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.root {
+    display: flex;
 }

@@ -1,22 +1,44 @@
 .infoBox {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #7b6df3 !important;
+    background-color: #fff !important;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     width: 40vw;
     text-align: center;
+    transform: scale(0.9);
+    height: 35vh;
+}
+
+.infoBox:hover {
+    transform: scale(1.0);
+    transition: transform 0.4s ease-in-out;
+    cursor: pointer;
 }
 
 .cityName{
     font-size: 50px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .weatherIcon {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+}
+
+.weatherIcon {
+    transform: scale(0.99);
+}
+
+.weatherIcon:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s ease-in-out;
+}
+
+.weatherIcon img {
+    width: 8vw;
+    height: 8vh;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .weatherInfoBox {
@@ -25,12 +47,33 @@
     /* align-items: center; */
     justify-content: center;
     margin-top: 20px;
+    transform: scale(0.8);
+}
+
+.weatherInfoBox:hover {
+    transform: scale(1.0);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.description > p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: large;
+    margin: 0 0 5px 5px;
+    text-transform: capitalize;
 }
 
 .upperInfo {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transform: scale(0.9);
+}
+
+.upperInfo:hover {
+    transform: scale(1.0);
+    transition: transform 0.5s ease-in-out;
 }
 
 .minTemp {
