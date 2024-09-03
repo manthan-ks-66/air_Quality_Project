@@ -14,9 +14,9 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
     let [city, setCity] = useState("");
     const API_URL = "http://api.openweathermap.org/geo/1.0/direct"; 
     const AIR_API_URL = "http://api.airvisual.com/v2/nearest_city";
-    const API_KEY = "dfba77b3aa31e1beec9333e474be507a";
+    const API_KEY = import.meta.env.VITE_API_KEY;
     const weather_API = "https://api.openweathermap.org/data/2.5/weather";
-    const AIR_API_KEY = "9423b326-3ad4-4f25-8a67-63f4c9ba97c6";
+    const AIR_API_KEY = import.meta.env.VITE_AIR_API_KEY;
     const airDataApi = "http://api.openweathermap.org/data/2.5/air_pollution";
 
     
