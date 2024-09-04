@@ -9,7 +9,7 @@ import Stack from '@mui/material/Stack';
 import { format } from 'date-fns';
 
 
-export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
+export default function SearchBox( {updateWeatherInfo, updateAirInfo, updateAirData} ) {
     let [error, setError] = useState(false);
     let [city, setCity] = useState("");
     const API_URL = "http://api.openweathermap.org/geo/1.0/direct"; 
@@ -60,6 +60,7 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
                 wind_speed: jsonResponse.wind.speed,
                 wind_deg: jsonResponse.wind.deg,
             }
+            console.log(jsonResponse);
         return weatherData;
     }
 
@@ -76,7 +77,13 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
     async function getAirData(lat, lon) {
         const airResponse = await fetch(`${airDataApi}?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
         const jsonResponse = await airResponse.json();
-        console.log(jsonResponse);
+        let airData = {
+            co: jsonResponse.list[0].components.co,
+            no2: jsonResponse.list[0].components.no2,
+            o3: jsonResponse.list[0].components.o3,
+            so2: jsonResponse.list[0].components.so2,
+        }
+        return airData;
     }
 
     async function getWeatherCoord() {
@@ -89,7 +96,7 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
                 const AQI = await getAQI(lat, lon);
                 updateWeatherInfo(weatherData);
                 updateAirInfo(AQI);
-                await getAirData(lat, lon);
+                updateAirData(await getAirData(lat, lon));
             }
             catch(error) {
                 setError(true);
@@ -135,5 +142,6 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo} ) {
 SearchBox.propTypes = {
     updateWeatherInfo: PropTypes.func.isRequired,
     updateAirInfo: PropTypes.func.isRequired,
+    updateAirData: PropTypes.func.isRequired,
 };
   

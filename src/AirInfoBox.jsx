@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
-export default function AirInfoBox({ airInfo, weatherInfo }) {
+export default function AirInfoBox({ airInfo, weatherInfo, airData }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function AirInfoBox({ airInfo, weatherInfo }) {
     }
   }, [airInfo, weatherInfo]); // Add weatherInfo to dependencies
 
-  if (!airInfo || !weatherInfo) return null;
+  if (!airInfo || !weatherInfo || !airData) return null;
 
   function capitalizeFirstLetter(string) {
     if (string.length === 0) return string;
@@ -44,6 +44,12 @@ export default function AirInfoBox({ airInfo, weatherInfo }) {
           {airInfo.aqi >= 51 && airInfo.aqi <= 100 && (
             <img src="/good.gif" alt="error" />
           )}
+          {airInfo.aqi >= 101 && airInfo.aqi <= 150 && (
+            <img src="/bored.gif" alt="error" />
+          )}
+          {airInfo.aqi >= 151 && airInfo.aqi <= 200 && (
+            <img src="/sad.gif" alt="error" />
+          )}
           <div className="desc">
             {airInfo.aqi >= 1 && airInfo.aqi <= 50 && (
               <p>Very Good</p>
@@ -66,6 +72,16 @@ export default function AirInfoBox({ airInfo, weatherInfo }) {
               </>
             ) : null}
           </div>
+          <div className="airData">
+            {airData ? (
+              <>
+                <h1>CARBON MONOXIDE: {airData.co}</h1>
+                <h1>NITROGEN DIOXIDE: {airData.no2}</h1>
+                <h1>OZONE: {airData.o3}</h1>
+                <h1>SULPHUR DIOXIDE: {airData.so2}</h1>
+              </>
+            ) : null}
+          </div>
         </>
       )}
     </div>
@@ -76,4 +92,5 @@ export default function AirInfoBox({ airInfo, weatherInfo }) {
 AirInfoBox.propTypes = {
   airInfo: PropTypes.object,
   weatherInfo: PropTypes.object,
+  airData: PropTypes.object,
 };

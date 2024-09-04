@@ -89,7 +89,16 @@ export default function InfoBox( { weatherInfo } ) {
                     <p>Sunrise At: {weatherInfo.sunrise}</p>
                     <p>Sunset At: {weatherInfo.sunset}</p>
                 </div>
-
+                <div className="windInfo">
+                    <div className="windSpeed">
+                    <img src="/wind.gif" alt="" />
+                    <p>Wind Speed: {weatherInfo.wind_speed} m/s</p>
+                    </div>
+                    <div className="windDegree">
+                        <img src="/wind-power.gif" alt="error" />
+                        <p>Wind Degree: {weatherInfo.wind_deg}&deg;</p>
+                    </div>
+                </div>
                 </>
         )}
          </div>
@@ -107,6 +116,8 @@ InfoBox.propTypes = {
         feelsLike: PropTypes.number.isRequired,
         min_temp: PropTypes.number.isRequired,
         max_temp: PropTypes.number.isRequired,
-        main: PropTypes.string.isRequired
+        main: PropTypes.string.isRequired,
+        wind_speed: PropTypes.number.isRequired,
+        wind_deg: PropTypes.number.isRequired,
     }).isRequired,
 };

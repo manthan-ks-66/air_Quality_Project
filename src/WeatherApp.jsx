@@ -8,6 +8,12 @@ import './WeatherApp.css'
 export default function WeatherApp() {
     let [weatherInfo, setWeatherInfo] = useState(null);
     let [airInfo, setAirInfo] = useState(null);
+    let [airData , setAirData] = useState(null);
+
+    function updateAirData ( data ) {
+        setAirData( data );
+    }
+
     function updateAirInfo ( data ) {
         setAirInfo( data );
     }
@@ -19,9 +25,9 @@ export default function WeatherApp() {
     return (
         <>
             <div className="main">
-                <SearchBox updateWeatherInfo={updateWeatherInfo} updateAirInfo={updateAirInfo} />
+                <SearchBox updateAirData={updateAirData} updateWeatherInfo={updateWeatherInfo} updateAirInfo={updateAirInfo} />
                 <InfoBox  weatherInfo={weatherInfo} />
-                <AirInfoBox weatherInfo={weatherInfo} airInfo={airInfo}/>
+                <AirInfoBox airData={airData} weatherInfo={weatherInfo} airInfo={airInfo}/>
             </div>
         </>
     )
