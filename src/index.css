@@ -15,3 +15,15 @@ body {
 .root {
     display: flex;
 }
+
+@media screen and (max-width: 900px) {
+    .root {
+        flex-direction: column;
+    }
+
+    .main {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+    
+}

@@ -3,7 +3,7 @@
     background-color: #fff !important;
     padding: 20px;
     border-radius: 15px;
-    width: 40vw;
+    width: 50vw;
     text-align: center;
     transform: scale(0.9);
     height: 45vh;
@@ -106,7 +106,8 @@
 
 @media screen and (max-width: 900px) {
     .infoBox { 
-        width: 80vw;
+        width: 90vw;
+        height: 65vh;
     }
 
     .weatherIcon {
@@ -127,6 +128,17 @@
 
     .infoBox > p {
         font-size: 2.5vh;
-    }   
+    }  
+
+    .windInfo img {
+        width: 10vw;
+        height: 10vh;
+        object-fit: contain;
+    } 
+
+    .windInfo {
+        font-size: 2.5vh;
+        flex-direction: column;
+    }
     
 }

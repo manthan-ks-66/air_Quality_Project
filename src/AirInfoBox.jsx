@@ -77,8 +77,8 @@ export default function AirInfoBox({ airInfo, weatherInfo, airData }) {
               <>
                 <h1>CARBON MONOXIDE: {airData.co}</h1>
                 <h1>NITROGEN DIOXIDE: {airData.no2}</h1>
-                <h1>OZONE: {airData.o3}</h1>
                 <h1>SULPHUR DIOXIDE: {airData.so2}</h1>
+                <h1>OZONE: {airData.o3}</h1>
               </>
             ) : null}
           </div>
