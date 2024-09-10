@@ -1,12 +1,12 @@
 .airInfoBox {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
     width: 50vw;
     text-align: center;
     transform: scale(0.9);
-    height: 50vh;
+    height: 55vh;
 }
 
 .airInfoCity {
@@ -67,7 +67,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
     .airInfoBox {
         width: 90vw;
     }   
