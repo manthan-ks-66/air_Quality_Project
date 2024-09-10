@@ -42,10 +42,15 @@
 }
 
 .weatherInfoBox {
+    width: 15vw;
+    height: 15vh;
+    margin: auto;
+    border-radius: 9px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    background-color: #6de36d;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
     transform: scale(0.8);
 }
@@ -104,10 +109,10 @@
     object-fit: contain;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
     .infoBox { 
         width: 90vw;
-        height: 65vh;
+        height: 75vh;
     }
 
     .weatherIcon {
@@ -118,9 +123,19 @@
         font-size: 30px;
     }
 
-    .weatherInfoBox {
-        margin-top: 10px;
-    }
+  .weatherInfoBox {
+    width: 50vw;
+    height: 20vh;
+    margin: auto;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    background-color: #6de36d;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    transform: scale(0.8);
+  }
 
     .infoBox > h3 {
         font-size: 3.5vh;    

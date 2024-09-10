@@ -58,7 +58,7 @@ export default function AirInfoBox({ airInfo, weatherInfo, airData }) {
               <p>Good</p>
             )}
             {airInfo.aqi >= 101 && airInfo.aqi <= 150 && (
-              <p>Mderate</p>
+              <p>Moderate</p>
             )}
             {airInfo.aqi >= 151 && airInfo.aqi <= 200 && (
               <p>Unhealthy</p>

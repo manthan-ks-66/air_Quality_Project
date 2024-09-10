@@ -5,20 +5,20 @@
 }
 
 body {
-    background-image: url("/bg_Image.jpg");
+    background-image: url("/12457-NOEMW3.jpg");
     background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    background-color: #33b633;
 }
 
-.root {
-    display: flex;
-}
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 980px) {
     .root {
         flex-direction: column;
+    }
+
+    .titleBox {
+        position: relative;
+        top: 5vh;
+        font-size: 3vw;
     }
 
     .main {
