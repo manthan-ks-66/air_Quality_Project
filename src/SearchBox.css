@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 5px;
     border-radius: 90px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -37,7 +37,7 @@
     }
 
     .searchBox {
-        width: 80vw;
+        width: 90vw;
     }
 
     .app-logo h2 {
@@ -58,6 +58,13 @@
 
     .search button {
         width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .searchBox {
+        width: 90vw;
     }
     
 }

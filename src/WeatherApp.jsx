@@ -1,8 +1,8 @@
 import SearchBox from "./SearchBox"
 import InfoBox from "./InfoBox"
 import AirInfoBox from "./AirInfoBox";
-// import WeatherMap from "./WeatherMap";
 import { useState } from "react"
+import TitleBox from "./TitleBox";
 import './WeatherApp.css'
 
 export default function WeatherApp() {
@@ -25,6 +25,7 @@ export default function WeatherApp() {
     return (
         <>
             <div className="main">
+                <TitleBox />
                 <SearchBox updateAirData={updateAirData} updateWeatherInfo={updateWeatherInfo} updateAirInfo={updateAirInfo} />
                 <InfoBox  weatherInfo={weatherInfo} />
                 <AirInfoBox airData={airData} weatherInfo={weatherInfo} airInfo={airInfo}/>

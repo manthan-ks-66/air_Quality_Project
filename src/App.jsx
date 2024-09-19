@@ -1,14 +1,11 @@
-import WeatherApp from "./WeatherApp"
-import TitleBox from "./TitleBox"
+import WeatherApp from "./WeatherApp";
 
 function App() {
-
   return (
     <>
-      <TitleBox />
       <WeatherApp />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

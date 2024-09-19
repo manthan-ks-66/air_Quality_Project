@@ -3,10 +3,9 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
-    width: 50vw;
+    width: 60vw;
     text-align: center;
     transform: scale(0.9);
-    height: 55vh;
 }
 
 .airInfoCity {
@@ -51,11 +50,17 @@
 }
 
 .airData {
+    width: 40%;
+    height: 25%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #66b266;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 0.6vw;
+    font-size: 1.2vw;
+    font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
     transform: scale(0.9);
@@ -70,6 +75,7 @@
 @media screen and (max-width: 1200px) {
     .airInfoBox {
         width: 90vw;
+        height: 75vh;
     }   
 
     .gifIcon img {
@@ -88,4 +94,12 @@
     .airInfoCity {
         font-size: 5vw;
     }
+}
+
+@media screen and (max-width: 900px) {
+    .airInfoBox {
+        width: 90vw;
+        height: 75vh;
+    }
+    
 }

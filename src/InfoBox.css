@@ -3,10 +3,10 @@
     background-color: #fff !important;
     padding: 20px;
     border-radius: 15px;
-    width: 50vw;
+    width: 60vw;
     text-align: center;
     transform: scale(0.9);
-    height: 45vh;
+    height: 55vh;
 }
 
 .infoBox:hover {
@@ -25,20 +25,10 @@
     align-items: center;
 }
 
-.weatherIcon {
-    transform: scale(0.99);
-}
-
-.weatherIcon:hover{
-    transform: scale(1.1);
-    transition: transform 0.4s ease-in-out;
-}
-
 .weatherIcon img {
-    width: 8vw;
-    height: 8vh;
+    width: 10vw;
+    height: 12vh;
     object-fit: contain;
-    border-radius: 50%;
 }
 
 .weatherInfoBox {
@@ -70,15 +60,10 @@
 }
 
 .upperInfo {
+    letter-spacing: 0.6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transform: scale(0.9);
-}
-
-.upperInfo:hover {
-    transform: scale(1.0);
-    transition: transform 0.5s ease-in-out;
 }
 
 .minTemp {
@@ -101,11 +86,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.1rem;
 }
 
 .windInfo img {
-    width: 5vw;
-    height: 5vh;
+    width: 10vw;
+    height: 10vh;
     object-fit: contain;
 }
 
@@ -154,6 +140,23 @@
     .windInfo {
         font-size: 2.5vh;
         flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    .infoBox {  
+        width: 90vw;
+        height: 75vh;
+    }
+
+    .weatherIcon {
+        gap: 10px;
+    }
+
+    .weatherInfoBox {
+        width: 50vw;
+        height: 20vh;   
     }
     
 }

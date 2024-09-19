@@ -60,7 +60,6 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo, updateAirD
                 wind_speed: jsonResponse.wind.speed,
                 wind_deg: jsonResponse.wind.deg,
             }
-            console.log(jsonResponse);
         return weatherData;
     }
 
@@ -82,6 +81,8 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo, updateAirD
             no2: jsonResponse.list[0].components.no2,
             o3: jsonResponse.list[0].components.o3,
             so2: jsonResponse.list[0].components.so2,
+            pm2_5: jsonResponse.list[0].components.pm2_5,
+            pm10: jsonResponse.list[0].components.pm10,
         }
         return airData;
     }
@@ -118,7 +119,7 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo, updateAirD
 
     return (
         <>
-        {error && <Stack sx={{ width: '100%'}}><Alert severity="error">City Not Found</Alert></Stack>}
+        {error && <Stack  sx={{ width: '65vw' }}><Alert sx={{ display: 'flex', justifyContent: 'center', borderRadius: '20px', marginBottom: '10px' }} severity="error">Sorry, City Not Found</Alert></Stack>}
         <div className='searchBox'>
             <div className='search'>
                 <Box
@@ -129,7 +130,7 @@ export default function SearchBox( {updateWeatherInfo, updateAirInfo, updateAirD
                     
                     autoComplete="off"
                 >
-                <TextField value={city} onChange={handleClick} id="outlined-basic" label="City Name" variant="outlined" /> 
+                <TextField onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} value={city} onChange={handleClick} id="outlined-basic" label="City Name" variant="outlined" /> 
                 </Box>
                 <Button className='searchButton' type="submit" onClick={handleSubmit} variant="contained">Search</Button>
             {error}
