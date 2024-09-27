@@ -1,18 +1,11 @@
 .infoBox {
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     background-color: #fff !important;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 8px 8px 0 0;
     width: 60vw;
     text-align: center;
-    transform: scale(0.9);
     height: 55vh;
-}
-
-.infoBox:hover {
-    transform: scale(1.0);
-    transition: transform 0.4s ease-in-out;
-    cursor: pointer;
+    margin-top: 4vh;
 }
 
 .cityName{
@@ -42,14 +35,13 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    transform: scale(0.8);
+    transform: scale(0.8px);
 }
 
 .weatherInfoBox:hover {
-    transform: scale(1.0);
-    transition: transform 0.5s ease-in-out;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
 }
-
 
 .description > p {
     font-style: italic;
@@ -60,7 +52,6 @@
 }
 
 .upperInfo {
-    letter-spacing: 0.6px;
     display: flex;
     align-items: center;
     justify-content: space-between;

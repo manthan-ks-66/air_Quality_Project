@@ -53,7 +53,7 @@ export default function InfoBox( { weatherInfo } ) {
                                 <p>{Math.floor(weatherInfo.min_temp)}&deg;C</p>
                             </div>
                     </div>
-                    <p className='cityName'>{newCity} Weather</p>
+                    <p className='cityName'>{newCity} Climate</p>
                     <div className="rightPanel">
                         <FontAwesomeIcon size='lg' icon={faArrowUp} />
                         <div className="maxTemp">

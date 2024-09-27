@@ -99,7 +99,7 @@ export default function AirInfoBox({ airInfo, weatherInfo, airData }) {
               <Table sx={{ minWidth: 300 }} aria-label="Air Quality Data">
                 <TableHead>
                   <TableRow>
-                    <StyledTableCell align="center">Air Data</StyledTableCell>
+                    <StyledTableCell align="center">Particles</StyledTableCell>
                     <StyledTableCell align="center">Value (µg/m³)</StyledTableCell>
                   </TableRow>
                 </TableHead>

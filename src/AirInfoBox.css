@@ -1,11 +1,9 @@
 .airInfoBox {
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 0 0 8px 8px;
     width: 60vw;
     text-align: center;
-    transform: scale(0.9);
 }
 
 .airInfoCity {
@@ -13,12 +11,6 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
-.airInfoBox:hover {
-    transform: scale(1.0);
-    transition: transform 0.5s ease-in-out;
-    cursor: pointer;
-}
-
 .gifIcon {
     width:100%vw;
     height: 100%vh;
